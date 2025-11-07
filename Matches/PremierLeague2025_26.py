@@ -102,3 +102,5 @@ matches_PremierLeague = [
     {"match_week": 8, "home": "West Ham United", "home_goals": 0, "away": "Brentford", "away_goals": 2},
 
 ]
+
+matchday_PremierLeague = sorted({m["match_week"] for m in matches_PremierLeague})

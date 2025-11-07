@@ -5,7 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="14cd7386-87d1-45e1-930f-0a93c143cb66" name="Changes" comment="Naprawiam problemy z gitem">
+      <change beforePath="$PROJECT_DIR$/.idea/Statistical_Football_Match_Simulator.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Statistical_Football_Match_Simulator.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/data.json" beforeDir="false" afterPath="$PROJECT_DIR$/Data/data.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/data.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/Data/data.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/ranking.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Data/ranking.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sezon/PremierLeague2025_26.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/Sezon/PremierLeague2025_26.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Table_prediction.py" beforeDir="false" afterPath="$PROJECT_DIR$/Table_prediction.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,18 +22,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {}
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/FranciszekKalembiewicz/Statistical_Football_Match_Simulator.git",
-    "accountId": "e9809319-cd31-418e-a6ab-87b1ef7d5740"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {}
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/FranciszekKalembiewicz/Statistical_Football_Match_Simulator.git&quot;,
+    &quot;accountId&quot;: &quot;e9809319-cd31-418e-a6ab-87b1ef7d5740&quot;
   }
-}]]></component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 3
-}]]></component>
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
   <component name="ProjectId" id="356e88c7iyQWo6QRAgXj7tQnr5t" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -35,16 +42,20 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python.Data_upload_api.executor": "Run",
+    "Python.League_update.executor": "Run",
+    "Python.Table_prediction.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main"
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/fkale/Desktop/OneDrive - Politechnika Wroclawska/Studia/Własne projekty/Statistical_Football_Match_Simulator"
   }
 }]]></component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-4e2b1448bda8-9a97661f3031-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-252.27397.106" />
+        <option value="bundled-python-sdk-164cda30dcd9-0af03a5fa574-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-252.26830.99" />
       </set>
     </attachedChunks>
   </component>
