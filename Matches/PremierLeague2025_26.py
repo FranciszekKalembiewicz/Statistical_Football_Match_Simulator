@@ -1,6 +1,6 @@
 import pandas as pd
 
-league_name_PremierLeague = r"Sezon\PremierLeague2025_26.xlsx"
+league_name_PremierLeague = rf"Sezon\PremierLeague2025_26.xlsx"
 
 teams_PremierLeague = pd.DataFrame({"Club": ["Arsenal","Manchester City","Liverpool","AFC Bournemouth","Chelsea","Tottenham Hotspur","Sunderland","Crystal Palace","Manchester United","Brighton & Hove Albion","Aston Villa","Everton","Newcastle United","Fulham","Leeds United","Brentford","Burnley","Nottingham Forest","West Ham United","Wolverhampton Wanderers"]})
 
@@ -102,5 +102,3 @@ matches_PremierLeague = [
     {"match_week": 8, "home": "West Ham United", "home_goals": 0, "away": "Brentford", "away_goals": 2},
 
 ]
-
-matchday_PremierLeague = sorted({m["match_week"] for m in matches_PremierLeague})

@@ -1,5 +1,5 @@
 import pandas as pd
-from Matches.PremierLeague2025_26 import league_name_PremierLeague, teams_PremierLeague, matchday_PremierLeague
+from Matches.PremierLeague2025_26 import league_name_PremierLeague, teams_PremierLeague, matches_PremierLeague
 
 def table_prediction(file_name, teams_df, match_days):
     df_matches = pd.read_excel(file_name)
@@ -21,10 +21,10 @@ def table_prediction(file_name, teams_df, match_days):
         table_data[club] = points
     return table_data
 
-def table_xlsx(league_name, teams_df, MatchDay):
+def table_xlsx(league_name, teams_df, matchday):
     clubs = teams_df["Club"].tolist()
     table = []
-    points = table_prediction(league_name, teams_df, MatchDay)
+    points = table_prediction(league_name, teams_df, matchday)
 
     for i in range(len(clubs)):
             table.append({
@@ -40,6 +40,8 @@ def table_xlsx(league_name, teams_df, MatchDay):
     return df_table
 
 #Table for prem:
-df_table = table_xlsx(league_name_PremierLeague, teams_PremierLeague, matchday_PremierLeague)
-short_name = league_name_PremierLeague = league_name_PremierLeague.split("\\")[-1]
-df_table.to_excel(rf"Prediction\Predicted_{short_name}_table_matchday_{max(matchday_PremierLeague)}.xlsx", index=False)
+matchday_PremierLeague = sorted({m["match_week"] for m in matches_PremierLeague})
+for i in range(1, len(matchday_PremierLeague) + 1):
+    df_table = table_xlsx(league_name_PremierLeague, teams_PremierLeague, matchday_PremierLeague[:i])
+    short_name = league_name_PremierLeague.split("\\")[-1]
+    df_table.to_excel(rf"Prediction\PremierLeague2025_26\Predicted_{short_name}_table_matchday_{max(matchday_PremierLeague[:i])}.xlsx", index=False)
