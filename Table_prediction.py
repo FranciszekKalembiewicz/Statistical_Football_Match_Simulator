@@ -39,9 +39,11 @@ def table_xlsx(league_name, teams_df, matchday):
     df_table = pd.DataFrame(table)
     return df_table
 
-#Table for prem:
-matchday_PremierLeague = sorted({m["match_week"] for m in matches_PremierLeague})
-for i in range(1, len(matchday_PremierLeague) + 1):
-    df_table = table_xlsx(league_name_PremierLeague, teams_PremierLeague, matchday_PremierLeague[:i])
-    short_name = league_name_PremierLeague.split("\\")[-1]
-    df_table.to_excel(rf"Prediction\PremierLeague2025_26\Predicted_{short_name}_table_matchday_{max(matchday_PremierLeague[:i])}.xlsx", index=False)
+# #Table for prem:
+#    path = Path(rf"Prediction\{league_name_PremierLeague}")
+#   if not path.exists():
+#        path.mkdir(parents=True)
+# matchday_PremierLeague = sorted({0} | {m["match_week"] for m in matches_PremierLeague})
+# for i in range(1, len(matchday_PremierLeague) + 1):
+#     df_table = table_xlsx(rf"Sezon\{league_name_PremierLeague}.xlsx", teams_PremierLeague, matchday_PremierLeague[:i])
+#     df_table.to_excel(rf"Prediction\PremierLeague2025_26\Predicted_{league_name_PremierLeague}_table_matchday_{max(matchday_PremierLeague[:i])}.xlsx", index=False)

@@ -2,6 +2,8 @@ import pandas as pd
 from Statistic_prediction import match_score_propability
 from Matches.PremierLeague2025_26 import matches_PremierLeague, teams_PremierLeague, league_name_PremierLeague
 
+df_rating = pd.read_excel(r"Data\data.xlsx")
+
 def add_match_result(df_league, match_week, home_team, home_goals, away_team, away_goals,):
     mask = df_league['Home'].eq(home_team) & df_league['Away'].eq(away_team)
     df_league.loc[mask, 'HomeGoals'] = home_goals
@@ -92,14 +94,15 @@ def update_league(teams_df, df_league):
 
     return df_league
 
-#PremierLegue:
-df_rating = pd.read_excel(r"Data\data.xlsx")
-df_league = pd.read_excel(rf"Sezon\{league_name_PremierLeague}.xlsx")
 
-matches = matches_PremierLeague
-
-for match in matches:
-    add_match_result(df_league, match["match_week"], match["home"], match["home_goals"], match["away"], match["away_goals"],)
-
-df_league = update_league(teams_PremierLeague, df_league)
-df_league.to_excel(rf"Sezon\{league_name_PremierLeague}.xlsx", index=False)
+# #PremierLegue:
+# df_rating = pd.read_excel(r"Data\data.xlsx")
+# df_league = pd.read_excel(rf"Sezon\{league_name_PremierLeague}.xlsx")
+#
+# matches = matches_PremierLeague
+#
+# for match in matches:
+#     add_match_result(df_league, match["match_week"], match["home"], match["home_goals"], match["away"], match["away_goals"],)
+#
+# df_league = update_league(teams_PremierLeague, df_league)
+# df_league.to_excel(rf"Sezon\{league_name_PremierLeague}.xlsx", index=False)
