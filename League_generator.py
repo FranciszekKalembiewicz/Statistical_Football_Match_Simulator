@@ -4,7 +4,7 @@ from Matches.PremierLeague2025_26 import teams_PremierLeague, league_name_Premie
 
 df_rating = pd.read_excel(r"Data\data.xlsx")
 
-def generate_matches_df(teams_df):
+def generate_matches_df(teams_df, df_rating=df_rating):
     clubs = teams_df["Club"].tolist()
     matches = []
 
@@ -66,6 +66,6 @@ def generate_matches_df(teams_df):
     df_matches = pd.DataFrame(matches)
     return df_matches
 
-#PremierLegue:
-fixtures = generate_matches_df(teams_PremierLeague)
-fixtures.to_excel(league_name_PremierLeague, index=False)
+# #PremierLegue:
+# fixtures = generate_matches_df(teams_PremierLeague)
+# fixtures.to_excel(rf"Sezon\{league_name_PremierLeague}.xlsx", index=False)

@@ -1,6 +1,7 @@
 import pandas as pd
 
-league_name_PremierLeague = rf"Sezon\PremierLeague2025_26.xlsx"
+#league_name_PremierLeague = rf"Sezon\PremierLeague2025_26.xlsx"
+league_name_PremierLeague = rf"PremierLeague2025_26"
 
 teams_PremierLeague = pd.DataFrame({"Club": ["Arsenal","Manchester City","Liverpool","AFC Bournemouth","Chelsea","Tottenham Hotspur","Sunderland","Crystal Palace","Manchester United","Brighton & Hove Albion","Aston Villa","Everton","Newcastle United","Fulham","Leeds United","Brentford","Burnley","Nottingham Forest","West Ham United","Wolverhampton Wanderers"]})
 

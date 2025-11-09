@@ -94,7 +94,7 @@ def update_league(teams_df, df_league):
 
 #PremierLegue:
 df_rating = pd.read_excel(r"Data\data.xlsx")
-df_league = pd.read_excel(league_name_PremierLeague)
+df_league = pd.read_excel(rf"Sezon\{league_name_PremierLeague}.xlsx")
 
 matches = matches_PremierLeague
 
@@ -102,13 +102,4 @@ for match in matches:
     add_match_result(df_league, match["match_week"], match["home"], match["home_goals"], match["away"], match["away_goals"],)
 
 df_league = update_league(teams_PremierLeague, df_league)
-df_league.to_excel(league_name_PremierLeague, index=False)
-
-
-
-#Potem podsumowanie tabeli oczekiwanych punktów i zsumowanie ich
-#Wykres punktów w zależności od kolejki i sznasy na wygranie ligi ładne wizualki
-#W tabeli podsumuwującej musi być kolumna z np sznasa na top4 szansa na spadek mistrzostwo itd.
-
-# if pd.isna(df_league.loc[df_league["Home"].eq("Arsenal") & df_league["Away"].eq("Manchester City"),"Result"].values[0]):
-# print(df_league.loc[df_league["Home"].eq("Arsenal") & df_league["Away"].eq("Manchester City"),"Result"].values[0])
+df_league.to_excel(rf"Sezon\{league_name_PremierLeague}.xlsx", index=False)
