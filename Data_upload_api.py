@@ -10,7 +10,6 @@ with open(r"Data\data.json", "w", encoding="utf-8") as f:
     data = response.json()
     json.dump(data, f, ensure_ascii=False, indent=2)
 
-
 with open(r"Data\data.json", "r", encoding="utf-8") as f:
     data = json.load(f)
 
