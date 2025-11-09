@@ -101,4 +101,27 @@ matches_PremierLeague = [
     {"match_week": 8, "home": "Liverpool", "home_goals": 1, "away": "Manchester United", "away_goals": 2},
     {"match_week": 8, "home": "West Ham United", "home_goals": 0, "away": "Brentford", "away_goals": 2},
 
+    # MatchWeek 9
+    {"match_week": 9, "home": "Leeds United", "home_goals": 2, "away": "West Ham United", "away_goals": 1},
+    {"match_week": 9, "home": "Newcastle United", "home_goals": 2, "away": "Fulham", "away_goals": 1},
+    {"match_week": 9, "home": "Chelsea", "home_goals": 1, "away": "Sunderland", "away_goals": 2},
+    {"match_week": 9, "home": "Manchester United", "home_goals": 4, "away": "Brighton & Hove Albion", "away_goals": 2},
+    {"match_week": 9, "home": "Brentford", "home_goals": 3, "away": "Liverpool", "away_goals": 2},
+    {"match_week": 9, "home": "Wolverhampton Wanderers", "home_goals": 2, "away": "Burnley", "away_goals": 3},
+    {"match_week": 9, "home": "AFC Bournemouth", "home_goals": 2, "away": "Nottingham Forest", "away_goals": 0},
+    {"match_week": 9, "home": "Aston Villa", "home_goals": 1, "away": "Manchester City", "away_goals": 0},
+    {"match_week": 9, "home": "Arsenal", "home_goals": 1, "away": "Crystal Palace", "away_goals": 0},
+    {"match_week": 9, "home": "Everton", "home_goals": 0, "away": "Tottenham Hotspur", "away_goals": 3},
+
+    # MatchWeek 10
+    {"match_week": 10, "home": "Nottingham Forest", "home_goals": 2, "away": "Manchester United", "away_goals": 2},
+    {"match_week": 10, "home": "Fulham", "home_goals": 3, "away": "Wolverhampton Wanderers", "away_goals": 0},
+    {"match_week": 10, "home": "Crystal Palace", "home_goals": 2, "away": "Brentford", "away_goals": 0},
+    {"match_week": 10, "home": "Burnley", "home_goals": 0, "away": "Arsenal", "away_goals": 2},
+    {"match_week": 10, "home": "Brighton & Hove Albion", "home_goals": 3, "away": "Leeds United", "away_goals": 0},
+    {"match_week": 10, "home": "Tottenham Hotspur", "home_goals": 0, "away": "Chelsea", "away_goals": 1},
+    {"match_week": 10, "home": "Liverpool", "home_goals": 2, "away": "Aston Villa", "away_goals": 0},
+    {"match_week": 10, "home": "West Ham United", "home_goals": 3, "away": "Newcastle United", "away_goals": 1},
+    {"match_week": 10, "home": "Manchester City", "home_goals": 3, "away": "AFC Bournemouth", "away_goals": 1},
+    {"match_week": 10, "home": "Sunderland", "home_goals": 1, "away": "Everton", "away_goals": 1}
 ]

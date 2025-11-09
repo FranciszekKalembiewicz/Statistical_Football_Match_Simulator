@@ -47,8 +47,8 @@ def sezon_full_prediction(teams, league_name, matches):
                 rf"Prediction\{league_name}\Predicted_{league_name}_table_matchday_{max(matchday[:i])}.xlsx",
                 index=False)
 
-
 #PremierLeague:
 sezon_full_prediction(teams_PremierLeague, league_name_PremierLeague, matches_PremierLeague)
+
 # #LaLiga:
-sezon_full_prediction(teams_LaLiga, league_name_PremierLeague, matches_LaLiga)
+sezon_full_prediction(teams_LaLiga, league_name_LaLiga, matches_LaLiga)
