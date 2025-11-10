@@ -1,5 +1,6 @@
 import pandas as pd
-from Matches.PremierLeague2025_26 import league_name_PremierLeague, teams_PremierLeague, matches_PremierLeague
+import numpy as np
+from Matches.PremierLeague2025_26 import league_name_PremierLeague, teams_PremierLeague, matches_PremierLeague, table_places_PremierLeague
 
 def table_prediction(file_name, teams_df, match_days):
     df_matches = pd.read_excel(file_name)
@@ -21,17 +22,26 @@ def table_prediction(file_name, teams_df, match_days):
         table_data[club] = points
     return table_data
 
-def table_xlsx(league_name, teams_df, matchday):
+def table_xlsx(league_name, teams_df, matchday, table_places):
     clubs = teams_df["Club"].tolist()
     table = []
     points = table_prediction(league_name, teams_df, matchday)
 
     for i in range(len(clubs)):
-            table.append({
-                "Rank": pd.NA,
-                "Team": clubs[i],
-                "ExpPoints": points[clubs[i]],
-            })
+        row = {}
+        row["Rank"] = pd.NA
+        row["Team"] = clubs[i]
+        row["WIN"] = pd.NA
+        if table_places.get("champions_league"):
+            row[f"TOP{max(table_places['champions_league'])}"] = pd.NA
+        if table_places.get("europa_league"):
+            row[f"TOP{max(table_places['europa_league'])}"] = pd.NA
+        if table_places.get("conference_league"):
+            row[f"TOP{max(table_places['conference_league'])}"] = pd.NA
+        row["RELEGATION"] = pd.NA
+        row["ExpPoints"] = points[clubs[i]]
+        table.append(row)
+
     table = sorted(table, key=lambda x: x["ExpPoints"], reverse=True)
     for i in range(len(table)):
         table[i]["Rank"] = i + 1

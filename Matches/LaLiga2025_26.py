@@ -4,6 +4,9 @@ league_name_LaLiga = rf"LaLiga2025_26"
 
 teams_LaLiga = pd.DataFrame({"Club": ["Real Madrid","Barcelona","Villarreal","Atlético de Madrid","Real Betis","Espanyol","Elche","Athletic Club","Sevilla","Alavés","Rayo Vallecano","Getafe","Osasuna","Valencia","Levante","Mallorca","Celta de Vigo","Real Sociedad","Real Oviedo","Girona"]})
 
+table_places_LaLiga = {"win": [1], "champions_league": [1,2,3,4], "europa_league": [5], "conference_league": [6], "relegation": [18,19,20]}
+
+
 matches_LaLiga = [
     # MatchWeek 1
     {"match_week": 1, "home": "Real Madrid", "home_goals": 1, "away": "Osasuna", "away_goals": 0},
