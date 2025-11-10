@@ -13,6 +13,7 @@ from Table_prediction import table_prediction, table_xlsx
 
 from Matches.PremierLeague2025_26 import matches_PremierLeague, teams_PremierLeague, league_name_PremierLeague
 from Matches.LaLiga2025_26 import matches_LaLiga, teams_LaLiga, league_name_LaLiga
+from Matches.Ekstraklasa2025_26 import matches_Ekstraklasa, teams_Ekstraklasa, league_name_Ekstraklasa
 
 def sezon_full_prediction(teams, league_name, matches):
     #Data_upload_api.py
@@ -50,5 +51,8 @@ def sezon_full_prediction(teams, league_name, matches):
 #PremierLeague:
 sezon_full_prediction(teams_PremierLeague, league_name_PremierLeague, matches_PremierLeague)
 
-# #LaLiga:
+#LaLiga:
 sezon_full_prediction(teams_LaLiga, league_name_LaLiga, matches_LaLiga)
+
+#Ekstraklasa:
+sezon_full_prediction(teams_Ekstraklasa, league_name_Ekstraklasa, matches_Ekstraklasa)
