@@ -1,5 +1,4 @@
 import pandas as pd
-import numpy as np
 from Matches.PremierLeague2025_26 import league_name_PremierLeague, teams_PremierLeague, matches_PremierLeague, table_places_PremierLeague
 
 def table_prediction(file_name, teams_df, match_days):

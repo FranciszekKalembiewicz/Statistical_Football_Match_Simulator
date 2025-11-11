@@ -1,10 +1,20 @@
 import pandas as pd
+import random
 
-def table_prediction(file_name, teams_df, match_days):
-    df_matches = pd.read_excel(file_name)
+def simulation(league_name, teams_df, match_days):
+    df_matches = pd.read_excel(rf"Sezon\{league_name}.xlsx")
+    df_matches.insert("HomeSimulationPoints", pd.NA)
+    df_matches.insert("AwaySimulationPoints", pd.NA)
+
+    values = ["HomeWin", "Draw", "AwayWin"]
+    probabilities = [0.42, 0.26, 0.32]
+    result = random.choices(values, weights=probabilities, k=1)[0]
+
+
     clubs = teams_df["Club"].tolist()
-    table_data = {}
+    prediction_data = {}
     for club in clubs:
+        prediction_data[club] = []
         points = 0
         for i in range(0, df_matches.shape[0]):
             if df_matches.at[i, 'Home'] == club:
@@ -17,23 +27,24 @@ def table_prediction(file_name, teams_df, match_days):
                     points += df_matches.at[i, 'AwayPoints']
                 else:
                     points += df_matches.at[i, 'AwayExp']
-        table_data[club] = points
-    return table_data
+        prediction_data[club].append(points)
 
-def table_xlsx(league_name, teams_df, matchday):
-    clubs = teams_df["Club"].tolist()
-    table = []
-    points = table_prediction(league_name, teams_df, matchday)
+    return prediction_data
 
-    for i in range(len(clubs)):
-            table.append({
-                "Rank": pd.NA,
-                "Team": clubs[i],
-                "ExpPoints": points[clubs[i]],
-            })
-    table = sorted(table, key=lambda x: x["ExpPoints"], reverse=True)
-    for i in range(len(table)):
-        table[i]["Rank"] = i + 1
-
-    df_table = pd.DataFrame(table)
-    return df_table
+# def table_xlsx(league_name, teams_df, matchday):
+#     clubs = teams_df["Club"].tolist()
+#     table = []
+#     points = table_prediction(league_name, teams_df, matchday)
+#
+#     for i in range(len(clubs)):
+#             table.append({
+#                 "Rank": pd.NA,
+#                 "Team": clubs[i],
+#                 "ExpPoints": points[clubs[i]],
+#             })
+#     table = sorted(table, key=lambda x: x["ExpPoints"], reverse=True)
+#     for i in range(len(table)):
+#         table[i]["Rank"] = i + 1
+#
+#     df_table = pd.DataFrame(table)
+#     return df_table
