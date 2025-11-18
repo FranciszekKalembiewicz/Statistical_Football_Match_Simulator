@@ -37,30 +37,33 @@ def simulation(league_name, teams_df, match_days):
                     if df_matches.at[i, 'MatchWeek'] in match_days:
                         points += df_matches.at[i, 'HomePoints']
                     else:
-                        points += df_matches.at[i, 'HomeExp']
+                        points += df_matches.at[i, 'HomeSimulationPoints']
                 if df_matches.at[i, 'Away'] == club:
                     if df_matches.at[i, 'MatchWeek'] in match_days:
                         points += df_matches.at[i, 'AwayPoints']
                     else:
-                        points += df_matches.at[i, 'AwayExp']
+                        points += df_matches.at[i, 'AwaySimulationPoints']
+
             prediction_data[club].append(points)
 
         return prediction_data
 
-# def table_xlsx(league_name, teams_df, matchday):
-#     clubs = teams_df["Club"].tolist()
-#     table = []
-#     points = table_prediction(league_name, teams_df, matchday)
-#
-#     for i in range(len(clubs)):
-#             table.append({
-#                 "Rank": pd.NA,
-#                 "Team": clubs[i],
-#                 "ExpPoints": points[clubs[i]],
-#             })
-#     table = sorted(table, key=lambda x: x["ExpPoints"], reverse=True)
-#     for i in range(len(table)):
-#         table[i]["Rank"] = i + 1
-#
-#     df_table = pd.DataFrame(table)
-#     return df_table
+def monte_carlo_simulation(league_name, teams_df, match_days):
+    num_simulations = 10
+    teams_places = {}
+    clubs = teams_df["Club"].tolist()
+    for club in clubs:
+        teams_places[club] = []
+
+    for _ in range(num_simulations):
+        simulation_result = simulation(league_name, teams_df, match_days)
+        sorted_prediction = dict(sorted(simulation_result.items(), key=lambda item: item[1][0], reverse=True))
+
+        order = list(sorted_prediction.keys())
+        for club in order:
+            teams_places[club].append(order.index(club) + 1)
+
+    print(teams_places)
+
+print(simulation(league_name_PremierLeague, teams_PremierLeague, [1,2,3,4,5]))
+# monte_carlo_simulation(league_name_PremierLeague, teams_PremierLeague, [1,2,3,4,5])
