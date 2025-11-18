@@ -46,7 +46,8 @@ def simulation(league_name, teams_df, match_days):
 
             prediction_data[club].append(points)
 
-        return prediction_data
+    df_matches.to_excel("test.xlsx",index=False)
+    return prediction_data
 
 def monte_carlo_simulation(league_name, teams_df, match_days):
     num_simulations = 10
