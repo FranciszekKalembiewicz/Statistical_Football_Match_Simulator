@@ -45,9 +45,11 @@ def simulation(league_name, teams_df, match_days):
                         points += df_matches.at[i, 'AwaySimulationPoints']
 
             prediction_data[club].append(points)
+    df = pd.DataFrame((prediction_data.items()), columns=['Team', 'SimulatedPoints'])
+    df["SimulatedPoints"] = df["SimulatedPoints"].str[0]
+    df = df.sort_values(by="SimulatedPoints", ascending=False).reset_index(drop=True)
 
-    df_matches.to_excel("test.xlsx",index=False)
-    return prediction_data
+    return df
 
 def monte_carlo_simulation(league_name, teams_df, match_days):
     num_simulations = 10
@@ -57,14 +59,11 @@ def monte_carlo_simulation(league_name, teams_df, match_days):
         teams_places[club] = []
 
     for _ in range(num_simulations):
-        simulation_result = simulation(league_name, teams_df, match_days)
-        sorted_prediction = dict(sorted(simulation_result.items(), key=lambda item: item[1][0], reverse=True))
+        df = simulation(league_name, teams_df, match_days)
+        for index, row in df.iterrows():
+            teams_places[row["Team"]].append(index + 1)
 
-        order = list(sorted_prediction.keys())
-        for club in order:
-            teams_places[club].append(order.index(club) + 1)
+    return teams_places
 
-    print(teams_places)
-
-print(simulation(league_name_PremierLeague, teams_PremierLeague, [1,2,3,4,5]))
-# monte_carlo_simulation(league_name_PremierLeague, teams_PremierLeague, [1,2,3,4,5])
+# print(simulation(league_name_PremierLeague, teams_PremierLeague, [1,2,3,4,5]))
+monte_carlo_simulation(league_name_PremierLeague, teams_PremierLeague, [1,2,3,4,5])
