@@ -28,18 +28,21 @@ def table_xlsx(league_name, teams_df, match_days, table_places, number_simulatio
     points = table_prediction(league_name, teams_df, match_days)
     proc_table = table_update_monte_carlo(league_name, teams_df, match_days, table_places, number_simulations)
 
+    #Format to percent
+    to_percent = lambda x: f"{x * 100:.2f}%"
+
     for i in range(len(clubs)):
         row = {}
         row["Rank"] = pd.NA
         row["Team"] = clubs[i]
-        row["WIN"] = proc_table[clubs[i]]["win"]
+        row["WIN"] = to_percent(proc_table[clubs[i]]["win"])
         if table_places.get("champions_league"):
-            row[f"TOP{max(table_places['champions_league'])}"] = proc_table[clubs[i]]['champions_league']
+            row[f"TOP{max(table_places['champions_league'])}"] = to_percent(proc_table[clubs[i]]['champions_league'])
         if table_places.get("europa_league"):
-            row[f"TOP{max(table_places['europa_league'])}"] = proc_table[clubs[i]]['europa_league']
+            row[f"TOP{max(table_places['europa_league'])}"] = to_percent(proc_table[clubs[i]]['europa_league'])
         if table_places.get("conference_league"):
-            row[f"TOP{max(table_places['conference_league'])}"] = proc_table[clubs[i]]['conference_league']
-        row["RELEGATION"] = proc_table[clubs[i]]["relegation"]
+            row[f"TOP{max(table_places['conference_league'])}"] = to_percent(proc_table[clubs[i]]['conference_league'])
+        row["RELEGATION"] = to_percent(proc_table[clubs[i]]["relegation"])
         row["ExpPoints"] = points[clubs[i]]
         table.append(row)
 

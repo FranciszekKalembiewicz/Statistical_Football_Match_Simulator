@@ -12,6 +12,7 @@ from League_generator import generate_matches_df
 from League_update import add_match_result, update_league
 from Table_prediction import table_prediction, table_xlsx
 
+from Matches.Bundesliga2025_26 import matches_Bundesliga, teams_Bundesliga, league_name_Bundesliga, table_places_Bundesliga
 from Matches.PremierLeague2025_26 import matches_PremierLeague, teams_PremierLeague, league_name_PremierLeague, table_places_PremierLeague
 from Matches.LaLiga2025_26 import matches_LaLiga, teams_LaLiga, league_name_LaLiga, table_places_LaLiga
 from Matches.Ekstraklasa2025_26 import matches_Ekstraklasa, teams_Ekstraklasa, league_name_Ekstraklasa, table_places_Ekstraklasa
@@ -49,6 +50,9 @@ def sezon_full_prediction(teams, league_name, matches, table_places):
             df_table.to_excel(
                 rf"Prediction\{league_name}\Predicted_{league_name}_table_matchday_{max(matchday[:i])}.xlsx",
                 index=False)
+
+#Bundesliga:
+sezon_full_prediction(teams_Bundesliga, league_name_Bundesliga, matches_Bundesliga, table_places_Bundesliga)
 
 #PremierLeague:
 sezon_full_prediction(teams_PremierLeague, league_name_PremierLeague, matches_PremierLeague, table_places_PremierLeague)
