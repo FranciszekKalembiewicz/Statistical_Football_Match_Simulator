@@ -1,4 +1,5 @@
 import pandas as pd
+from Simulation_Monte_Carlo import table_update_monte_carlo
 from Matches.PremierLeague2025_26 import league_name_PremierLeague, teams_PremierLeague, matches_PremierLeague, table_places_PremierLeague
 
 def table_prediction(file_name, teams_df, match_days):
@@ -21,23 +22,24 @@ def table_prediction(file_name, teams_df, match_days):
         table_data[club] = points
     return table_data
 
-def table_xlsx(league_name, teams_df, matchday, table_places):
+def table_xlsx(league_name, teams_df, match_days, table_places, number_simulations):
     clubs = teams_df["Club"].tolist()
     table = []
-    points = table_prediction(league_name, teams_df, matchday)
+    points = table_prediction(league_name, teams_df, match_days)
+    proc_table = table_update_monte_carlo(league_name, teams_df, match_days, table_places, number_simulations)
 
     for i in range(len(clubs)):
         row = {}
         row["Rank"] = pd.NA
         row["Team"] = clubs[i]
-        row["WIN"] = pd.NA
+        row["WIN"] = proc_table[clubs[i]]["win"]
         if table_places.get("champions_league"):
-            row[f"TOP{max(table_places['champions_league'])}"] = pd.NA
+            row[f"TOP{max(table_places['champions_league'])}"] = proc_table[clubs[i]]['champions_league']
         if table_places.get("europa_league"):
-            row[f"TOP{max(table_places['europa_league'])}"] = pd.NA
+            row[f"TOP{max(table_places['europa_league'])}"] = proc_table[clubs[i]]['europa_league']
         if table_places.get("conference_league"):
-            row[f"TOP{max(table_places['conference_league'])}"] = pd.NA
-        row["RELEGATION"] = pd.NA
+            row[f"TOP{max(table_places['conference_league'])}"] = proc_table[clubs[i]]['conference_league']
+        row["RELEGATION"] = proc_table[clubs[i]]["relegation"]
         row["ExpPoints"] = points[clubs[i]]
         table.append(row)
 

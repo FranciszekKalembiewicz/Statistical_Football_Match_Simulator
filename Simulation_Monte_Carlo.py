@@ -1,10 +1,11 @@
 import pandas as pd
 import random
-from Matches.PremierLeague2025_26 import matches_PremierLeague, teams_PremierLeague, league_name_PremierLeague
+from tqdm import tqdm
+from Matches.PremierLeague2025_26 import matches_PremierLeague, teams_PremierLeague, league_name_PremierLeague, table_places_PremierLeague
 
 
 def simulation(league_name, teams_df, match_days):
-    df_matches = pd.read_excel(rf"Sezon\{league_name}.xlsx")
+    df_matches = pd.read_excel(rf"{league_name}")
     df_matches['HomeSimulationPoints'] = pd.NA
     df_matches['AwaySimulationPoints'] = pd.NA
 
@@ -51,19 +52,34 @@ def simulation(league_name, teams_df, match_days):
 
     return df
 
-def monte_carlo_simulation(league_name, teams_df, match_days):
-    num_simulations = 10
+def monte_carlo_simulation(league_name, teams_df, match_days, number_simulations):
+    num_simulations = number_simulations
     teams_places = {}
     clubs = teams_df["Club"].tolist()
     for club in clubs:
         teams_places[club] = []
 
-    for _ in range(num_simulations):
+    for _ in tqdm(range(num_simulations)):
         df = simulation(league_name, teams_df, match_days)
         for index, row in df.iterrows():
             teams_places[row["Team"]].append(index + 1)
-
     return teams_places
 
+def table_update_monte_carlo(league_name, teams_df, match_days, table_places, number_simulations):
+    teams_places = monte_carlo_simulation(league_name, teams_df, match_days, number_simulations)
+    proc_table = {}
+    for team, places in teams_places.items():
+        total = len(places)
+        team_result = {}
+
+        for category, accepted_places in table_places.items():
+            count = sum(place in accepted_places for place in places)
+            percentage = count / total
+            team_result[category] = percentage
+
+        proc_table[team] = team_result
+
+    return proc_table
+
 # print(simulation(league_name_PremierLeague, teams_PremierLeague, [1,2,3,4,5]))
-monte_carlo_simulation(league_name_PremierLeague, teams_PremierLeague, [1,2,3,4,5])
+# print(table_update_monte_carlo(league_name_PremierLeague, teams_PremierLeague, [1,2,3,4,5], table_places_PremierLeague))

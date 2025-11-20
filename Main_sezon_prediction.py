@@ -44,7 +44,8 @@ def sezon_full_prediction(teams, league_name, matches, table_places):
     for i in range(1, len(matchday) + 1):
         path = Path(rf"Prediction\{league_name}\Predicted_{league_name}_table_matchday_{max(matchday[:i])}.xlsx")
         if not path.exists():
-            df_table = table_xlsx(rf"Sezon\{league_name}.xlsx", teams, matchday[:i], table_places)
+            print(f"\n Predicted_{league_name}_table_matchday_{max(matchday[:i])}")
+            df_table = table_xlsx(rf"Sezon\{league_name}.xlsx", teams, matchday[:i], table_places, number_simulations = 1000)
             df_table.to_excel(
                 rf"Prediction\{league_name}\Predicted_{league_name}_table_matchday_{max(matchday[:i])}.xlsx",
                 index=False)
