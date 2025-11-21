@@ -4,7 +4,9 @@ league_name_Ekstraklasa = rf"Ekstraklasa2025_26"
 
 teams_Ekstraklasa = pd.DataFrame({"Club": ["Lech Poznań","Raków Częstochowa","Jagiellonia Białystok","Pogoń Szczecin","Legia Warszawa","Cracovia","Motor Lublin","GKS Katowice","Górnik Zabrze","Piast Gliwice","Korona Kielce","Radomiak Radom","Widzew Łódź","Lechia Gdańsk","Zagłębie Lubin","Wisła Płock","Arka Gdynia","Nieciecza"]})
 
-table_places_Ekstraklasa = {"win": [1], "champions_league": [1,2], "europa_league": [], "conference_league": [3,4], "relegation": [16,17,18]}
+table_places_Ekstraklasa = {"win": [1], "champions_league": [1,2], "europa_league": [], "conference_league": [3,4], "europe": [], "relegation": [16,17,18]}
+
+table_places_Ekstraklasa["europe"] = sorted(set(table_places_Ekstraklasa["champions_league"] + table_places_Ekstraklasa["europa_league"] + table_places_Ekstraklasa["conference_league"]))
 
 matches_Ekstraklasa = [
     # MatchWeek 1

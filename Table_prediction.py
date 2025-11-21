@@ -36,12 +36,26 @@ def table_xlsx(league_name, teams_df, match_days, table_places, number_simulatio
         row["Rank"] = pd.NA
         row["Team"] = clubs[i]
         row["WIN"] = to_percent(proc_table[clubs[i]]["win"])
+
         if table_places.get("champions_league"):
-            row[f"TOP{max(table_places['champions_league'])}"] = to_percent(proc_table[clubs[i]]['champions_league'])
+            if len(table_places["champions_league"]) > 1:
+                row[f"TOP{min(table_places['champions_league'])}-{max(table_places['champions_league'])} (UCL)"] = to_percent(proc_table[clubs[i]]['champions_league'])
+            elif len(table_places["champions_league"]) == 1:
+                row[f"TOP{table_places['champions_league'][0]} (UCL)"] = to_percent(proc_table[clubs[i]]['champions_league'])
+
         if table_places.get("europa_league"):
-            row[f"TOP{max(table_places['europa_league'])}"] = to_percent(proc_table[clubs[i]]['europa_league'])
+            if len(table_places["europa_league"]) > 1:
+                row[f"TOP{min(table_places['europa_league'])}-{max(table_places['europa_league'])} (UEL)"] = to_percent(proc_table[clubs[i]]['europa_league'])
+            elif len(table_places["europa_league"]) == 1:
+                row[f"TOP{table_places['europa_league'][0]} (UEL)"] = to_percent(proc_table[clubs[i]]['europa_league'])
+
         if table_places.get("conference_league"):
-            row[f"TOP{max(table_places['conference_league'])}"] = to_percent(proc_table[clubs[i]]['conference_league'])
+            if len(table_places["conference_league"]) > 1:
+                row[f"TOP{min(table_places['conference_league'])}-{max(table_places['conference_league'])} (UECL)"] = to_percent(proc_table[clubs[i]]['conference_league'])
+            elif len(table_places["conference_league"]) == 1:
+                row[f"TOP{table_places['conference_league'][0]} (UECL)"] = to_percent(proc_table[clubs[i]]['conference_league'])
+
+        row["EUROPE"] = to_percent(proc_table[clubs[i]]["europe"])
         row["RELEGATION"] = to_percent(proc_table[clubs[i]]["relegation"])
         row["ExpPoints"] = points[clubs[i]]
         table.append(row)

@@ -4,8 +4,9 @@ league_name_PremierLeague = rf"PremierLeague2025_26"
 
 teams_PremierLeague = pd.DataFrame({"Club": ["Arsenal","Manchester City","Liverpool","AFC Bournemouth","Chelsea","Tottenham Hotspur","Sunderland","Crystal Palace","Manchester United","Brighton & Hove Albion","Aston Villa","Everton","Newcastle United","Fulham","Leeds United","Brentford","Burnley","Nottingham Forest","West Ham United","Wolverhampton Wanderers"]})
 
-table_places_PremierLeague = {"win": [1], "champions_league": [1,2,3,4], "europa_league": [5], "conference_league": [], "relegation": [18,19,20]}
+table_places_PremierLeague = {"win": [1], "champions_league": [1,2,3,4], "europa_league": [5], "conference_league": [], "europe": [], "relegation": [18,19,20]}
 
+table_places_PremierLeague["europe"] = sorted(set(table_places_PremierLeague["champions_league"] + table_places_PremierLeague["europa_league"] + table_places_PremierLeague["conference_league"]))
 
 matches_PremierLeague = [
     # MatchWeek 1

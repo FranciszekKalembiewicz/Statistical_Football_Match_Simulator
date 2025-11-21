@@ -4,7 +4,9 @@ league_name_Bundesliga = rf"Bundesliga2025_26"
 
 teams_Bundesliga = pd.DataFrame({"Club": ["Bayern München","Borussia Dortmund","Bayer Leverkusen","RB Leipzig","Eintracht Frankfurt","Stuttgart","Freiburg","Werder Bremen","Hoffenheim","Mainz 05","Union Berlin","Borussia M'gladbach","Wolfsburg","Köln","Augsburg","Hamburger SV","St. Pauli","Heidenheim"]})
 
-table_places_Bundesliga = {"win": [1], "champions_league": [1,2,3,4], "europa_league": [5], "conference_league": [6], "relegation": [16,17,18]}
+table_places_Bundesliga = {"win": [1], "champions_league": [1,2,3,4], "europa_league": [5], "conference_league": [6], "europe": [], "relegation": [16,17,18]}
+
+table_places_Bundesliga["europe"] = sorted(set(table_places_Bundesliga["champions_league"] + table_places_Bundesliga["europa_league"] + table_places_Bundesliga["conference_league"]))
 
 matches_Bundesliga = [
     # Matchweek 1
