@@ -8,7 +8,7 @@ table_places_Ekstraklasa = {"win": [1], "champions_league": [1,2], "europa_leagu
 
 table_places_Ekstraklasa["europe"] = sorted(set(table_places_Ekstraklasa["champions_league"] + table_places_Ekstraklasa["europa_league"] + table_places_Ekstraklasa["conference_league"]))
 
-matches_Ekstraklasa_updated = [
+matches_Ekstraklasa = [
     # MatchWeek 1
     {"match_week": 1, "home": "Radomiak Radom", "home_goals": 5, "away": "Pogoń Szczecin", "away_goals": 1},
     {"match_week": 1, "home": "Motor Lublin", "home_goals": 1, "away": "Arka Gdynia", "away_goals": 0},

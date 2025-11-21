@@ -8,7 +8,7 @@ table_places_LaLiga = {"win": [1], "champions_league": [1,2,3,4], "europa_league
 
 table_places_LaLiga["europe"] = sorted(set(table_places_LaLiga["champions_league"] + table_places_LaLiga["europa_league"] + table_places_LaLiga["conference_league"]))
 
-matches_LaLiga_updated = [
+matches_LaLiga = [
     # MatchWeek 1
     {"match_week": 1, "home": "Real Madrid", "home_goals": 1, "away": "Osasuna", "away_goals": 0},
     {"match_week": 1, "home": "Elche", "home_goals": 1, "away": "Real Betis", "away_goals": 1},
