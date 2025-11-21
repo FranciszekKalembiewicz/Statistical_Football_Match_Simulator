@@ -47,8 +47,10 @@ def sezon_full_prediction(teams, league_name, matches, table_places):
         path = Path(rf"Prediction\{league_name}\Predicted_{league_name}_table_matchday_{max(matchday[:i])}.xlsx")
         if not path.exists():
             print(f"\n Predicted_{league_name}_table_matchday_{max(matchday[:i])}")
-            #df_table = table_xlsx(rf"Sezon\{league_name}.xlsx", teams, matchday[:i], table_places, number_simulations = 1000)
-            df_table = run_table_predictions(rf"Sezon\{league_name}.xlsx", teams, matchday[:i], table_places , number_simulations = 10000)
+            #I had a problem with complexity of table_xlsx (my program)
+            df_table = table_xlsx(rf"Sezon\{league_name}.xlsx", teams, matchday[:i], table_places, number_simulations = 10000)
+            #This is program I got with using chatGPT as an perfect example then I fixed my, so I don't need it anymore
+            #df_table = run_table_predictions(rf"Sezon\{league_name}.xlsx", teams, matchday[:i], table_places , number_simulations = 10000)
             df_table.to_excel(
                 rf"Prediction\{league_name}\Predicted_{league_name}_table_matchday_{max(matchday[:i])}.xlsx",
                 index=False)

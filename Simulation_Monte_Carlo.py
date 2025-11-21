@@ -6,48 +6,43 @@ from Matches.PremierLeague2025_26 import matches_PremierLeague, teams_PremierLea
 
 def simulation(league_name, teams_df, match_days):
     df_matches = pd.read_excel(rf"{league_name}")
-    df_matches['HomeSimulationPoints'] = pd.NA
-    df_matches['AwaySimulationPoints'] = pd.NA
+    clubs = teams_df["Club"].tolist()
+    prediction_points = {club: 0 for club in clubs}
 
     for i in range(df_matches.shape[0]):
-        values = ["HomeWin", "Draw", "AwayWin"]
-        probabilities = [
-            df_matches.at[i, "HomeWinProb"],
-            df_matches.at[i, "DrawProb"],
-            df_matches.at[i, "AwayWinProb"]
-        ]
-        result = random.choices(values, weights=probabilities, k=1)[0]
+        home = df_matches.at[i, 'Home']
+        away = df_matches.at[i, 'Away']
+        week = df_matches.at[i, 'MatchWeek']
 
-        if result == "HomeWin":
-            df_matches.at[i, "HomeSimulationPoints"] = 3
-            df_matches.at[i, "AwaySimulationPoints"] = 0
-        elif result == "AwayWin":
-            df_matches.at[i, "HomeSimulationPoints"] = 0
-            df_matches.at[i, "AwaySimulationPoints"] = 3
-        elif result == "Draw":
-            df_matches.at[i, "HomeSimulationPoints"] = 1
-            df_matches.at[i, "AwaySimulationPoints"] = 1
+        if week in match_days:
+            home_points = int(df_matches.at[i, 'HomePoints'])
+            away_points = int(df_matches.at[i, 'AwayPoints'])
 
-        clubs = teams_df["Club"].tolist()
-        prediction_data = {}
-        for club in clubs:
-            prediction_data[club] = []
-            points = 0
-            for i in range(0, df_matches.shape[0]):
-                if df_matches.at[i, 'Home'] == club:
-                    if df_matches.at[i, 'MatchWeek'] in match_days:
-                        points += df_matches.at[i, 'HomePoints']
-                    else:
-                        points += df_matches.at[i, 'HomeSimulationPoints']
-                if df_matches.at[i, 'Away'] == club:
-                    if df_matches.at[i, 'MatchWeek'] in match_days:
-                        points += df_matches.at[i, 'AwayPoints']
-                    else:
-                        points += df_matches.at[i, 'AwaySimulationPoints']
+        else:
+            probs = [
+                df_matches.at[i, "HomeWinProb"],
+                df_matches.at[i, "DrawProb"],
+                df_matches.at[i, "AwayWinProb"]
+            ]
 
-            prediction_data[club].append(points)
-    df = pd.DataFrame((prediction_data.items()), columns=['Team', 'SimulatedPoints'])
-    df["SimulatedPoints"] = df["SimulatedPoints"].str[0]
+            result = random.choices(["HomeWin", "Draw", "AwayWin"], weights=probs, k=1)[0]
+
+            if result == "HomeWin":
+                home_points = 3
+                away_points = 0
+            elif result == "AwayWin":
+                home_points = 0
+                away_points = 3
+            elif result == "Draw":
+                home_points = 1
+                away_points = 1
+            else:
+                print("Error in simulation")
+
+        prediction_points[home] += home_points
+        prediction_points[away] += away_points
+
+    df = pd.DataFrame(list(prediction_points.items()), columns=['Team', 'SimulatedPoints'])
     df = df.sort_values(by="SimulatedPoints", ascending=False).reset_index(drop=True)
 
     return df
