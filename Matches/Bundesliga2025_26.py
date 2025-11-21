@@ -8,7 +8,7 @@ table_places_Bundesliga = {"win": [1], "champions_league": [1,2,3,4], "europa_le
 
 table_places_Bundesliga["europe"] = sorted(set(table_places_Bundesliga["champions_league"] + table_places_Bundesliga["europa_league"] + table_places_Bundesliga["conference_league"]))
 
-matches_Bundesliga_FINAL = [
+matches_Bundesliga = [
     # Matchweek 1
     {"match_week": 1, "home": "Bayern München", "home_goals": 6, "away": "RB Leipzig", "away_goals": 0},
     {"match_week": 1, "home": "Union Berlin", "home_goals": 2, "away": "Stuttgart", "away_goals": 1},
