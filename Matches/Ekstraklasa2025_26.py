@@ -8,7 +8,7 @@ table_places_Ekstraklasa = {"win": [1], "champions_league": [1,2], "europa_leagu
 
 table_places_Ekstraklasa["europe"] = sorted(set(table_places_Ekstraklasa["champions_league"] + table_places_Ekstraklasa["europa_league"] + table_places_Ekstraklasa["conference_league"]))
 
-matches_Ekstraklasa = [
+matches_Ekstraklasa_updated = [
     # MatchWeek 1
     {"match_week": 1, "home": "Radomiak Radom", "home_goals": 5, "away": "Pogoń Szczecin", "away_goals": 1},
     {"match_week": 1, "home": "Motor Lublin", "home_goals": 1, "away": "Arka Gdynia", "away_goals": 0},
@@ -31,23 +31,25 @@ matches_Ekstraklasa = [
     {"match_week": 2, "home": "Cracovia", "home_goals": 2, "away": "Nieciecza", "away_goals": 0},
 
     # MatchWeek 3
-    {"match_week": 3, "home": "Legia Warszawa", "home_goals": 2, "away": "Arka Gdynia", "away_goals": 0},
-    {"match_week": 3, "home": "Radomiak Radom", "home_goals": 1, "away": "Raków Częstochowa", "away_goals": 1},
-    {"match_week": 3, "home": "Cracovia", "home_goals": 2, "away": "Lechia Gdańsk", "away_goals": 1},
-    {"match_week": 3, "home": "Lech Poznań", "home_goals": 1, "away": "Górnik Zabrze", "away_goals": 0},
-    {"match_week": 3, "home": "Widzew Łódź", "home_goals": 2, "away": "GKS Katowice", "away_goals": 0},
-    {"match_week": 3, "home": "Nieciecza", "home_goals": 1, "away": "Pogoń Szczecin", "away_goals": 0},
-    {"match_week": 3, "home": "Wisła Płock", "home_goals": 1, "away": "Piast Gliwice", "away_goals": 0},
-    {"match_week": 3, "home": "Zagłębie Lubin", "home_goals": 2, "away": "Korona Kielce", "away_goals": 1},
+    {"match_week": 3, "home": "Legia Warszawa", "home_goals": 0, "away": "Arka Gdynia", "away_goals": 0},
+    {"match_week": 3, "home": "Radomiak Radom", "home_goals": 3, "away": "Raków Częstochowa", "away_goals": 1},
+    {"match_week": 3, "home": "Cracovia", "home_goals": 2, "away": "Lechia Gdańsk", "away_goals": 2},
+    {"match_week": 3, "home": "Lech Poznań", "home_goals": 2, "away": "Górnik Zabrze", "away_goals": 1},
+    {"match_week": 3, "home": "Widzew Łódź", "home_goals": 3, "away": "GKS Katowice", "away_goals": 0},
+    {"match_week": 3, "home": "Nieciecza", "home_goals": 1, "away": "Pogoń Szczecin", "away_goals": 1},
+    {"match_week": 3, "home": "Wisła Płock", "home_goals": 2, "away": "Piast Gliwice", "away_goals": 0},
+    {"match_week": 3, "home": "Zagłębie Lubin", "home_goals": 1, "away": "Korona Kielce", "away_goals": 1},
+    {"match_week": 3, "home": "Motor Lublin", "home_goals": 0, "away": "Jagiellonia Białystok", "away_goals": 2},
 
     # MatchWeek 4
-    {"match_week": 4, "home": "Lechia Gdańsk", "home_goals": 1, "away": "Motor Lublin", "away_goals": 0},
-    {"match_week": 4, "home": "Legia Warszawa", "home_goals": 3, "away": "GKS Katowice", "away_goals": 0},
-    {"match_week": 4, "home": "Jagiellonia Białystok", "home_goals": 2, "away": "Cracovia", "away_goals": 1},
-    {"match_week": 4, "home": "Widzew Łódź", "home_goals": 1, "away": "Wisła Płock", "away_goals": 0},
-    {"match_week": 4, "home": "Arka Gdynia", "home_goals": 2, "away": "Pogoń Szczecin", "away_goals": 0},
-    {"match_week": 4, "home": "Górnik Zabrze", "home_goals": 2, "away": "Nieciecza", "away_goals": 0},
-    {"match_week": 4, "home": "Korona Kielce", "home_goals": 1, "away": "Radomiak Radom", "away_goals": 0},
+    {"match_week": 4, "home": "Lechia Gdańsk", "home_goals": 3, "away": "Motor Lublin", "away_goals": 3},
+    {"match_week": 4, "home": "Legia Warszawa", "home_goals": 3, "away": "GKS Katowice", "away_goals": 1},
+    {"match_week": 4, "home": "Jagiellonia Białystok", "home_goals": 5, "away": "Cracovia", "away_goals": 2},
+    {"match_week": 4, "home": "Widzew Łódź", "home_goals": 1, "away": "Wisła Płock", "away_goals": 1},
+    {"match_week": 4, "home": "Arka Gdynia", "home_goals": 2, "away": "Pogoń Szczecin", "away_goals": 1},
+    {"match_week": 4, "home": "Górnik Zabrze", "home_goals": 0, "away": "Nieciecza", "away_goals": 1},
+    {"match_week": 4, "home": "Korona Kielce", "home_goals": 3, "away": "Radomiak Radom", "away_goals": 0},
+    {"match_week": 4, "home": "Piast Gliwice", "home_goals": 0, "away": "Lech Poznań", "away_goals": 0},
 
     # MatchWeek 5
     {"match_week": 5, "home": "Nieciecza", "home_goals": 2, "away": "Raków Częstochowa", "away_goals": 3},
@@ -68,8 +70,8 @@ matches_Ekstraklasa = [
     {"match_week": 6, "home": "Korona Kielce", "home_goals": 2, "away": "Motor Lublin", "away_goals": 0},
     {"match_week": 6, "home": "Widzew Łódź", "home_goals": 1, "away": "Pogoń Szczecin", "away_goals": 2},
     {"match_week": 6, "home": "Radomiak Radom", "home_goals": 1, "away": "Nieciecza", "away_goals": 1},
-    {"match_week": 6, "home": "Raków Częstochowa", "home_goals": 2, "away": "Lech Poznań", "away_goals": 2},
     {"match_week": 6, "home": "Legia Warszawa", "home_goals": 0, "away": "Jagiellonia Białystok", "away_goals": 0},
+    {"match_week": 6, "home": "Raków Częstochowa", "home_goals": 2, "away": "Lech Poznań", "away_goals": 0},
 
     # MatchWeek 7
     {"match_week": 7, "home": "Cracovia", "home_goals": 2, "away": "Legia Warszawa", "away_goals": 1},
@@ -96,34 +98,34 @@ matches_Ekstraklasa = [
     {"match_week": 9, "home": "Górnik Zabrze", "home_goals": 3, "away": "Widzew Łódź", "away_goals": 2},
     {"match_week": 9, "home": "Pogoń Szczecin", "home_goals": 3, "away": "Lechia Gdańsk", "away_goals": 4},
     {"match_week": 9, "home": "Zagłębie Lubin", "home_goals": 2, "away": "Motor Lublin", "away_goals": 2},
-    {"match_week": 9, "home": "Raków Częstochowa", "home_goals": 1, "away": "Legia Warszawa", "away_goals": 1},
+    {"match_week": 9, "home": "Raków Częstochowa", "home_goals": 1, "away": "Legia Warszawa", "away_goals": 0},
     {"match_week": 9, "home": "Nieciecza", "home_goals": 0, "away": "Lech Poznań", "away_goals": 2},
     {"match_week": 9, "home": "Arka Gdynia", "home_goals": 0, "away": "Korona Kielce", "away_goals": 0},
     {"match_week": 9, "home": "Radomiak Radom", "home_goals": 1, "away": "Piast Gliwice", "away_goals": 0},
     {"match_week": 9, "home": "Wisła Płock", "home_goals": 0, "away": "Jagiellonia Białystok", "away_goals": 1},
-    {"match_week": 9, "home": "GKS Katowice", "home_goals": 0, "away": "Cracovia", "away_goals": 3},
+    {"match_week": 9, "home": "GKS Katowice", "home_goals": 1, "away": "Cracovia", "away_goals": 3},
 
     # MatchWeek 10
-    {"match_week": 10, "home": "Motor Lublin", "home_goals": 2, "away": "Radomiak Radom", "away_goals": 1},
-    {"match_week": 10, "home": "Zagłębie Lubin", "home_goals": 3, "away": "Arka Gdynia", "away_goals": 0},
-    {"match_week": 10, "home": "Legia Warszawa", "home_goals": 2, "away": "Pogoń Szczecin", "away_goals": 0},
-    {"match_week": 10, "home": "Lech Poznań", "home_goals": 2, "away": "Jagiellonia Białystok", "away_goals": 1},
+    {"match_week": 10, "home": "Motor Lublin", "home_goals": 2, "away": "Radomiak Radom", "away_goals": 2},
+    {"match_week": 10, "home": "Zagłębie Lubin", "home_goals": 4, "away": "Arka Gdynia", "away_goals": 0},
+    {"match_week": 10, "home": "Legia Warszawa", "home_goals": 1, "away": "Pogoń Szczecin", "away_goals": 0},
+    {"match_week": 10, "home": "Lech Poznań", "home_goals": 2, "away": "Jagiellonia Białystok", "away_goals": 2},
     {"match_week": 10, "home": "Widzew Łódź", "home_goals": 2, "away": "Raków Częstochowa", "away_goals": 1},
-    {"match_week": 10, "home": "Cracovia", "home_goals": 1, "away": "Górnik Zabrze", "away_goals": 0},
-    {"match_week": 10, "home": "Piast Gliwice", "home_goals": 1, "away": "Nieciecza", "away_goals": 0},
-    {"match_week": 10, "home": "Korona Kielce", "home_goals": 1, "away": "Lechia Gdańsk", "away_goals": 0},
-    {"match_week": 10, "home": "Wisła Płock", "home_goals": 3, "away": "GKS Katowice", "away_goals": 0},
+    {"match_week": 10, "home": "Cracovia", "home_goals": 1, "away": "Górnik Zabrze", "away_goals": 1},
+    {"match_week": 10, "home": "Piast Gliwice", "home_goals": 4, "away": "Nieciecza", "away_goals": 2},
+    {"match_week": 10, "home": "Korona Kielce", "home_goals": 3, "away": "Lechia Gdańsk", "away_goals": 0},
+    {"match_week": 10, "home": "Wisła Płock", "home_goals": 1, "away": "GKS Katowice", "away_goals": 1},
 
     # MatchWeek 11
-    {"match_week": 11, "home": "Górnik Zabrze", "home_goals": 2, "away": "Legia Warszawa", "away_goals": 1},
+    {"match_week": 11, "home": "Górnik Zabrze", "home_goals": 3, "away": "Legia Warszawa", "away_goals": 1},
     {"match_week": 11, "home": "GKS Katowice", "home_goals": 1, "away": "Lech Poznań", "away_goals": 0},
     {"match_week": 11, "home": "Raków Częstochowa", "home_goals": 2, "away": "Motor Lublin", "away_goals": 0},
-    {"match_week": 11, "home": "Jagiellonia Białystok", "home_goals": 2, "away": "Korona Kielce", "away_goals": 1},
-    {"match_week": 11, "home": "Arka Gdynia", "home_goals": 1, "away": "Cracovia", "away_goals": 0},
-    {"match_week": 11, "home": "Radomiak Radom", "home_goals": 1, "away": "Zagłębie Lubin", "away_goals": 1},
-    {"match_week": 11, "home": "Nieciecza", "home_goals": 0, "away": "Widzew Łódź", "away_goals": 2},
+    {"match_week": 11, "home": "Jagiellonia Białystok", "home_goals": 3, "away": "Korona Kielce", "away_goals": 1},
+    {"match_week": 11, "home": "Arka Gdynia", "home_goals": 2, "away": "Cracovia", "away_goals": 1},
+    {"match_week": 11, "home": "Radomiak Radom", "home_goals": 3, "away": "Zagłębie Lubin", "away_goals": 1},
+    {"match_week": 11, "home": "Nieciecza", "home_goals": 2, "away": "Widzew Łódź", "away_goals": 4},
     {"match_week": 11, "home": "Pogoń Szczecin", "home_goals": 2, "away": "Piast Gliwice", "away_goals": 1},
-    {"match_week": 11, "home": "Lechia Gdańsk", "home_goals": 1, "away": "Wisła Płock", "away_goals": 0},
+    {"match_week": 11, "home": "Lechia Gdańsk", "home_goals": 1, "away": "Wisła Płock", "away_goals": 1},
 
     # MatchWeek 12
     {"match_week": 12, "home": "Wisła Płock", "home_goals": 3, "away": "Nieciecza", "away_goals": 1},
@@ -149,23 +151,23 @@ matches_Ekstraklasa = [
 
     # MatchWeek 14
     {"match_week": 14, "home": "Cracovia", "home_goals": 0, "away": "Zagłębie Lubin", "away_goals": 0},
-    {"match_week": 14, "home": "Lechia Gdańsk", "home_goals": 0, "away": "Radomiak Radom", "away_goals": 2},
-    {"match_week": 14, "home": "Wisła Płock", "home_goals": 0, "away": "Pogoń Szczecin", "away_goals": 0},
+    {"match_week": 14, "home": "Lechia Gdańsk", "home_goals": 1, "away": "Radomiak Radom", "away_goals": 2},
+    {"match_week": 14, "home": "Wisła Płock", "home_goals": 2, "away": "Pogoń Szczecin", "away_goals": 0},
     {"match_week": 14, "home": "Widzew Łódź", "home_goals": 1, "away": "Legia Warszawa", "away_goals": 1},
-    {"match_week": 14, "home": "Jagiellonia Białystok", "home_goals": 2, "away": "Raków Częstochowa", "away_goals": 2},
+    {"match_week": 14, "home": "Jagiellonia Białystok", "home_goals": 1, "away": "Raków Częstochowa", "away_goals": 2},
     {"match_week": 14, "home": "Lech Poznań", "home_goals": 2, "away": "Motor Lublin", "away_goals": 2},
-    {"match_week": 14, "home": "Górnik Zabrze", "home_goals": 1, "away": "Arka Gdynia", "away_goals": 1},
+    {"match_week": 14, "home": "Górnik Zabrze", "home_goals": 5, "away": "Arka Gdynia", "away_goals": 1},
     {"match_week": 14, "home": "Piast Gliwice", "home_goals": 0, "away": "Korona Kielce", "away_goals": 0},
-    {"match_week": 14, "home": "Nieciecza", "home_goals": 3, "away": "GKS Katowice", "away_goals": 0},
+    {"match_week": 14, "home": "Nieciecza", "home_goals": 0, "away": "GKS Katowice", "away_goals": 3},
 
     # MatchWeek 15
-    {"match_week": 15, "home": "Arka Gdynia", "home_goals": 1, "away": "Lech Poznań", "away_goals": 0},
-    {"match_week": 15, "home": "Pogoń Szczecin", "home_goals": 2, "away": "Jagiellonia Białystok", "away_goals": 1},
-    {"match_week": 15, "home": "Korona Kielce", "home_goals": 4, "away": "Raków Częstochowa", "away_goals": 0},
-    {"match_week": 15, "home": "Legia Warszawa", "home_goals": 2, "away": "Nieciecza", "away_goals": 0},
-    {"match_week": 15, "home": "GKS Katowice", "home_goals": 3, "away": "Piast Gliwice", "away_goals": 0},
-    {"match_week": 15, "home": "Motor Lublin", "home_goals": 1, "away": "Wisła Płock", "away_goals": 0},
-    {"match_week": 15, "home": "Lechia Gdańsk", "home_goals": 1, "away": "Widzew Łódź", "away_goals": 1},
-    {"match_week": 15, "home": "Zagłębie Lubin", "home_goals": 0, "away": "Górnik Zabrze", "away_goals": 1},
-    {"match_week": 15, "home": "Radomiak Radom", "home_goals": 0, "away": "Cracovia", "away_goals": 0}
+    {"match_week": 15, "home": "Arka Gdynia", "home_goals": 3, "away": "Lech Poznań", "away_goals": 1},
+    {"match_week": 15, "home": "Pogoń Szczecin", "home_goals": 1, "away": "Jagiellonia Białystok", "away_goals": 2},
+    {"match_week": 15, "home": "Korona Kielce", "home_goals": 1, "away": "Raków Częstochowa", "away_goals": 4},
+    {"match_week": 15, "home": "Legia Warszawa", "home_goals": 1, "away": "Nieciecza", "away_goals": 2},
+    {"match_week": 15, "home": "GKS Katowice", "home_goals": 1, "away": "Piast Gliwice", "away_goals": 3},
+    {"match_week": 15, "home": "Motor Lublin", "home_goals": 1, "away": "Wisła Płock", "away_goals": 1},
+    {"match_week": 15, "home": "Lechia Gdańsk", "home_goals": 2, "away": "Widzew Łódź", "away_goals": 1},
+    {"match_week": 15, "home": "Zagłębie Lubin", "home_goals": 2, "away": "Górnik Zabrze", "away_goals": 0},
+    {"match_week": 15, "home": "Radomiak Radom", "home_goals": 3, "away": "Cracovia", "away_goals": 0}
 ]

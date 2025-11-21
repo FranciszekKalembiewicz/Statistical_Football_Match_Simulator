@@ -127,5 +127,17 @@ matches_PremierLeague = [
     {"match_week": 10, "home": "Liverpool", "home_goals": 2, "away": "Aston Villa", "away_goals": 0},
     {"match_week": 10, "home": "West Ham United", "home_goals": 3, "away": "Newcastle United", "away_goals": 1},
     {"match_week": 10, "home": "Manchester City", "home_goals": 3, "away": "AFC Bournemouth", "away_goals": 1},
-    {"match_week": 10, "home": "Sunderland", "home_goals": 1, "away": "Everton", "away_goals": 1}
+    {"match_week": 10, "home": "Sunderland", "home_goals": 1, "away": "Everton", "away_goals": 1},
+
+    # MatchWeek 11
+    {"match_week": 11, "home": "Manchester City", "home_goals": 3, "away": "Liverpool", "away_goals": 0},
+    {"match_week": 11, "home": "Aston Villa", "home_goals": 4, "away": "AFC Bournemouth", "away_goals": 0},
+    {"match_week": 11, "home": "Brentford", "home_goals": 3, "away": "Newcastle United", "away_goals": 1},
+    {"match_week": 11, "home": "Crystal Palace", "home_goals": 0, "away": "Brighton & Hove Albion", "away_goals": 0},
+    {"match_week": 11, "home": "Nottingham Forest", "home_goals": 3, "away": "Leeds United", "away_goals": 1},
+    {"match_week": 11, "home": "Chelsea", "home_goals": 3, "away": "Wolverhampton Wanderers", "away_goals": 0},
+    {"match_week": 11, "home": "Sunderland", "home_goals": 2, "away": "Arsenal", "away_goals": 2},
+    {"match_week": 11, "home": "Everton", "home_goals": 2, "away": "Fulham", "away_goals": 0},
+    {"match_week": 11, "home": "West Ham United", "home_goals": 3, "away": "Burnley", "away_goals": 2},
+    {"match_week": 11, "home": "Tottenham Hotspur", "home_goals": 2, "away": "Manchester United", "away_goals": 2},
 ]

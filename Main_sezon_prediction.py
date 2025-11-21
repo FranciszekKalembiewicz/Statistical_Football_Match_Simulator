@@ -58,11 +58,11 @@ def sezon_full_prediction(teams, league_name, matches, table_places):
 #PremierLeague:
 sezon_full_prediction(teams_PremierLeague, league_name_PremierLeague, matches_PremierLeague, table_places_PremierLeague)
 
-#LaLiga:
-sezon_full_prediction(teams_LaLiga, league_name_LaLiga, matches_LaLiga, table_places_LaLiga)
-
 #Ekstraklasa:
 sezon_full_prediction(teams_Ekstraklasa, league_name_Ekstraklasa, matches_Ekstraklasa, table_places_Ekstraklasa)
+
+#LaLiga:
+sezon_full_prediction(teams_LaLiga, league_name_LaLiga, matches_LaLiga, table_places_LaLiga)
 
 #Bundesliga:
 sezon_full_prediction(teams_Bundesliga, league_name_Bundesliga, matches_Bundesliga, table_places_Bundesliga)
